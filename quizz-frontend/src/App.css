@@ -3,40 +3,41 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background: linear-gradient(to bottom right, #f0f9ff, #e0f2fe);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-@keyframes logo-spin {
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 1.5em #60a5fa);
+}
+
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .card {
-  padding: 2em;
+  @apply p-6 bg-white rounded-2xl shadow-lg transition-transform hover:scale-105;
 }
 
-.read-the-docs {
-  color: #888;
+.btn-primary {
+  @apply bg-blue-500 text-white font-semibold py-2 px-4 rounded-xl hover:bg-blue-600 transition-all;
 }
