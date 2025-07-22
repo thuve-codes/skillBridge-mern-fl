@@ -25,14 +25,3 @@ export async function submitResult(result) {
   if (!res.ok) throw new Error("Failed to submit result");
   return res.json();
 }
-
-export async function getAIResponse(messages) {
-  const res = await fetch(`${API_BASE}/chatbot`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ messages }),
-  });
-
-  if (!res.ok) throw new Error("Chatbot failed");
-  return res.json();
-}
