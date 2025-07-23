@@ -38,15 +38,37 @@ Skill Bridge is a MERN stack-based Multiple Choice Question (MCQ) quiz applicati
 ### 1. Clone the repository
 
 ```bash
-npm install (each frontend and backend)
+git clone https://github.com/thuve-codes/skillBridge-mern-fl
+cd skillBridge-mern-fl
 ```
 
-### 2. Run Application 
+### 2. Install Dependencies
+
 ```bash
+cd quizz-backend
+npm install
+```
+
+```bash
+cd quizz-frontend
+npm install
+```
+
+### 3. Run Application 
+
+```bash (quizz-backend)
+npm run dev
+```
+```bash (quizz-frontend)
 npm run dev
 ```
 
-### 3. Login Credentials 
-Username - admin
-password- admin123
+### 4. Login Credentials 
+    Username - admin
+    password- admin123
+---
+
+## 👨‍💻 Developed By
+    Thuverakan Tharumakulasooriyan
+    www.thuve.me 
 
