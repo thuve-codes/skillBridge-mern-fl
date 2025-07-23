@@ -23,7 +23,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
           <div className="card-body p-4 text-center">
             {/* Logo */}
             <img
-              src="./src/assets/skillbridge.png" // <-- Replace with your actual logo path
+              src="./src/assets/skillbridge.png"
               alt="SkillBridge Logo"
               style={{ width: "100px", marginBottom: "1rem" }}
             />

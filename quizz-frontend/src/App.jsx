@@ -34,7 +34,7 @@ function App() {
   const [toastMessage, setToastMessage] = useState("");
   const navigate = useNavigate();
 
-  const userId = "student123"; // Replace with dynamic ID if available
+  const userId = "student123"; //TODO
 
   const handleLogout = () => {
     setIsLoggedIn(false);
