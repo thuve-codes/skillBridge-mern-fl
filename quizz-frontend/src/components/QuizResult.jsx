@@ -22,17 +22,22 @@ function QuizResult() {
   }, [moduleId, score, total]);
 
   return (
-    <div className="p-10 bg-blue-50 min-h-screen flex flex-col items-center justify-center text-center">
-      <h2 className="text-3xl font-bold text-blue-800 mb-6">
+    <div
+      className="d-flex flex-column justify-content-center align-items-center text-center bg-light"
+      style={{ minHeight: "100vh", padding: "3rem 1rem" }}
+    >
+      <h2 className="mb-4 display-5 fw-bold text-primary">
         {moduleId.toUpperCase()} - Quiz Results
       </h2>
-      <div className="text-xl text-gray-800 mb-2">
+
+      <div className="fs-4 text-secondary mb-2">
         You scored <strong>{score}</strong> out of <strong>{total}</strong>
       </div>
+
       <div
-        className={`text-2xl font-bold ${
-          percentage >= 45 ? "text-green-600" : "text-red-600"
-        } mb-8`}
+        className={`fs-2 fw-bold mb-5 ${
+          percentage >= 45 ? "text-success" : "text-danger"
+        }`}
       >
         {percentage}% {percentage >= 45 ? "✔️ Passed" : "❌ Try Again"}
       </div>
@@ -40,7 +45,7 @@ function QuizResult() {
       {percentage < 45 && (
         <button
           onClick={() => navigate(`/quiz/${moduleId}`)}
-          className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-md"
+          className="btn btn-danger btn-lg"
         >
           🔄 Retake Quiz
         </button>
@@ -48,7 +53,7 @@ function QuizResult() {
 
       <button
         onClick={() => navigate("/modules")}
-        className="mt-4 text-blue-700 underline hover:text-blue-900"
+        className="btn btn-link mt-3 text-primary"
       >
         ← Back to Modules
       </button>

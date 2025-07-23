@@ -17,12 +17,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div
-      className="d-flex align-items-center justify-content-center vh-100"
-      style={{
-        background: "linear-gradient(135deg, #c3ecff, #e6faff)",
-      }}
-    >
+    <div className="d-flex align-items-center justify-content-center vh-100">
       <div className="col-md-4">
         <div className="card shadow-lg border-0 rounded-4">
           <div className="card-body p-4 text-center">

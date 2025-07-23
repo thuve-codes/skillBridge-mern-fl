@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { fetchQuestions } from '../api';
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { fetchQuestions } from "../api";
 
 function QuizPage() {
   const { moduleId } = useParams();
@@ -18,7 +18,7 @@ function QuizPage() {
   }, [moduleId]);
 
   if (!module) {
-    return <div className="p-10 text-gray-700">Loading...</div>;
+    return <div className="p-5 text-secondary text-center">Loading...</div>;
   }
 
   const questions = module.quiz;
@@ -40,32 +40,29 @@ function QuizPage() {
   };
 
   return (
-    <div className="p-8 min-h-screen bg-white max-w-3xl mx-auto">
-      <h2 className="text-2xl font-bold text-blue-800 mb-4">
+    <div className="container my-5" style={{ maxWidth: "700px" }}>
+      <h2 className="mb-4 text-primary fw-bold">
         {module.title} Quiz — Question {current + 1} of {questions.length}
       </h2>
 
-      <div className="mb-6">
-        <p className="text-lg font-semibold mb-4">{currentQ.question}</p>
-        <div className="space-y-3">
+      <div className="mb-4">
+        <p className="h5 fw-semibold">{currentQ.question}</p>
+
+        <div className="mt-3">
           {currentQ.options.map((opt, i) => (
-            <label
-              key={i}
-              className={`block border px-4 py-2 rounded cursor-pointer ${
-                selected === opt
-                  ? 'bg-blue-100 border-blue-600'
-                  : 'bg-gray-50 hover:bg-gray-100'
-              }`}
-            >
+            <div className="form-check mb-2" key={i}>
               <input
+                className="form-check-input"
                 type="radio"
                 name="option"
-                className="mr-2"
+                id={`option-${i}`}
                 checked={selected === opt}
                 onChange={() => setSelected(opt)}
               />
-              {opt}
-            </label>
+              <label className="form-check-label" htmlFor={`option-${i}`}>
+                {opt}
+              </label>
+            </div>
           ))}
         </div>
       </div>
@@ -73,9 +70,9 @@ function QuizPage() {
       <button
         onClick={handleNext}
         disabled={!selected}
-        className="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded disabled:opacity-50"
+        className="btn btn-primary"
       >
-        {current === questions.length - 1 ? 'Submit Quiz' : 'Next'}
+        {current === questions.length - 1 ? "Submit Quiz" : "Next"}
       </button>
     </div>
   );
